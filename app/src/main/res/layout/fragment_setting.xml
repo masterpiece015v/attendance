@@ -52,20 +52,6 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textDataMakeStudent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:background="@color/white"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:paddingLeft="20dp"
-                android:paddingTop="15dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="15dp"
-                android:text="@string/text_student_make"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/textDataMakeTimetable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,6 +64,21 @@
                 android:paddingRight="10dp"
                 android:paddingBottom="15dp"
                 android:text="@string/text_timetable_make"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textEditTimeTableColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="15dp"
+                android:text="@string/time_table_color_edit"
                 android:textSize="20sp" />
         </LinearLayout>
 

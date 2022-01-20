@@ -7,193 +7,76 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MainFragment"
-        android:label="@string/text_main_title"
+        android:name="tokyo.mstp015v.timetable_pro.MainFragment"
+        android:label="@string/timetable_app"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_to_settingFragment"
             app:destination="@id/settingFragment" />
         <action
             android:id="@+id/action_to_enterAttendanceForGroupFragment"
-            app:destination="@id/enterAttendanceForGroupFragment" />
-        <action
-            android:id="@+id/action_to_checkAttendanceForGroupFragment"
-            app:destination="@id/checkAttendanceForGroupFragment" />
+            app:destination="@id/enterTimeTableForGroupFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="tokyo.mstp015v.attendance_pro.SettingFragment"
+        android:name="tokyo.mstp015v.timetable_pro.SettingFragment"
         android:label="@string/text_setting_value"
         tools:layout="@layout/fragment_setting">
-        <action
-            android:id="@+id/action_to_mainFragment"
-            app:destination="@id/mainFragment" />
         <action
             android:id="@+id/action_to_makeGroupFragment"
             app:destination="@id/makeGroupFragment" />
         <action
-            android:id="@+id/action_to_makeStudentForGroupListFragment"
-            app:destination="@id/makeStudentForGroupListFragment" />
-        <action
             android:id="@+id/action_to_makeTimeTableForGroupFragment"
             app:destination="@id/makeTimeTableForGroupFragment" />
+        <action
+            android:id="@+id/action_editTimeTableColorFragment2"
+            app:destination="@id/editTimeTableColorFragment" />
     </fragment>
     <fragment
         android:id="@+id/makeGroupFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MakeGroupFragment"
+        android:name="tokyo.mstp015v.timetable_pro.MakeGroupFragment"
         android:label="@string/group_edit"
-        tools:layout="@layout/fragment_make_group">
-        <action
-            android:id="@+id/action_to_settingFragment"
-            app:destination="@id/settingFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/makeStudentForGroupListFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MakeStudentForGroupListFragment"
-        android:label="@string/group_select"
-        tools:layout="@layout/fragment_make_student_for_group_list">
-        <action
-            android:id="@+id/action_to_settingFragment"
-            app:destination="@id/settingFragment" />
-        <action
-            android:id="@+id/action_to_makeStudentFragment"
-            app:destination="@id/makeStudentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/makeStudentFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MakeStudentFragment"
-        android:label="@string/text_student_make"
-        tools:layout="@layout/fragment_make_student">
-        <action
-            android:id="@+id/action_to_makeStudentForGroupListFragment"
-            app:destination="@id/makeStudentForGroupListFragment" />
-        <argument
-            android:name="g_name"
-            android:defaultValue="null"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_make_group"/>
     <fragment
         android:id="@+id/makeTimeTableForGroupFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MakeTimeTableForGroupFragment"
+        android:name="tokyo.mstp015v.timetable_pro.MakeTimeTableForGroupFragment"
         android:label="@string/group_select"
         tools:layout="@layout/fragment_make_time_table_for_group">
-        <action
-            android:id="@+id/action_to_settingFragment"
-            app:destination="@id/settingFragment" />
         <action
             android:id="@+id/action_to_makeTimeTableFragment"
             app:destination="@id/makeTimeTableFragment" />
     </fragment>
     <fragment
         android:id="@+id/makeTimeTableFragment"
-        android:name="tokyo.mstp015v.attendance_pro.MakeTimeTableFragment"
+        android:name="tokyo.mstp015v.timetable_pro.MakeTimeTableFragment"
         android:label="@string/text_timetable_make"
         tools:layout="@layout/fragment_make_time_table">
-        <action
-            android:id="@+id/action_to_makeTimeTableForGroupFragment"
-            app:destination="@id/makeTimeTableForGroupFragment" />
         <argument
             android:name="g_name"
             app:argType="string"
             app:nullable="true" />
     </fragment>
     <fragment
-        android:id="@+id/enterAttendanceForGroupFragment"
-        android:name="tokyo.mstp015v.attendance_pro.EnterAttendanceForGroupFragment"
+        android:id="@+id/enterTimeTableForGroupFragment"
+        android:name="tokyo.mstp015v.timetable_pro.EnterTimeTableForGroupFragment"
         android:label="@string/group_select"
-        tools:layout="@layout/fragment_enter_attendance_for_group">
+        tools:layout="@layout/fragment_enter_time_table_for_group">
         <action
-            android:id="@+id/action_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
-            android:id="@+id/action_to_enterAttendanceTimeTableFragment"
-            app:destination="@id/enterAttendanceTimeTableFragment" />
+            android:id="@+id/action_to_enterTimeTableFragment"
+            app:destination="@id/enterTimeTableFragment" />
     </fragment>
     <fragment
-        android:id="@+id/enterAttendanceTimeTableFragment"
-        android:name="tokyo.mstp015v.attendance_pro.EnterAttendanceTimeTableFragment"
+        android:id="@+id/enterTimeTableFragment"
+        android:name="tokyo.mstp015v.timetable_pro.EnterTimeTableFragment"
         android:label="@string/time_select"
-        tools:layout="@layout/fragment_enter_attendance_time_table">
-        <action
-            android:id="@+id/action_to_enterAttendanceForGroupFragment"
-            app:destination="@id/enterAttendanceForGroupFragment" />
-        <argument
-            android:name="g_name"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_to_enterAttendanceFragment"
-            app:destination="@id/enterAttendanceFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/enterAttendanceFragment"
-        android:name="tokyo.mstp015v.attendance_pro.EnterAttendanceFragment"
-        android:label="@string/attendance_add_value"
-        tools:layout="@layout/fragment_enter_attendance">
-        <action
-            android:id="@+id/action_to_enterAttendanceTimeTableFragment"
-            app:destination="@id/enterAttendanceTimeTableFragment" />
-        <argument
-            android:name="g_name"
-            app:argType="string" />
-        <argument
-            android:name="sub_name"
-            app:argType="string" />
-        <argument
-            android:name="year"
-            app:argType="integer" />
-        <argument
-            android:name="month"
-            app:argType="integer" />
-        <argument
-            android:name="date"
-            app:argType="integer" />
-        <argument
-            android:name="timed"
-            app:argType="integer" />
-        <argument
-            android:name="day"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/checkAttendanceForGroupFragment"
-        android:name="tokyo.mstp015v.attendance_pro.CheckAttendanceForGroupFragment"
-        android:label="@string/group_select"
-        tools:layout="@layout/fragment_check_attendance_for_group">
-        <action
-            android:id="@+id/action_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
-            android:id="@+id/action_to_checkAttendanceForStudentFragment"
-            app:destination="@id/checkAttendanceForStudentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/checkAttendanceForStudentFragment"
-        android:name="tokyo.mstp015v.attendance_pro.CheckAttendanceForStudentFragment"
-        android:label="@string/student_select"
-        tools:layout="@layout/fragment_check_attendance_for_student">
-        <action
-            android:id="@+id/action_to_checkAttendanceForGroupFragment"
-            app:destination="@id/checkAttendanceForGroupFragment" />
-        <argument
-            android:name="g_name"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_to_checkAttendanceFragment"
-            app:destination="@id/checkAttendanceFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/checkAttendanceFragment"
-        android:name="tokyo.mstp015v.attendance_pro.CheckAttendanceFragment"
-        android:label="@string/attendance_output_value"
-        tools:layout="@layout/fragment_check_attendance">
-        <action
-            android:id="@+id/action_to_checkAttendanceForStudentFragment"
-            app:destination="@id/checkAttendanceForStudentFragment" />
-        <argument
-            android:name="st_id"
-            app:argType="string" />
+        tools:layout="@layout/fragment_enter_time_table">
         <argument
             android:name="g_name"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/editTimeTableColorFragment"
+        android:name="tokyo.mstp015v.timetable_pro.EditTimeTableColorFragment"
+        android:label="fragment_edit_time_table_color"
+        tools:layout="@layout/fragment_edit_time_table_color" />
 </navigation>
